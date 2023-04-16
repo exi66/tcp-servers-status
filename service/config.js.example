@@ -1,0 +1,14 @@
+module.exports = {
+  IMAGES_PATH: './tmp/images/', //where to save images
+  CHARTS_DATA_PATH: './tmp/charts/', //where to save json
+  TCP_ATTEMPTS: 3,
+  TCP_TIMEOUT: 500,
+  SERVERS: [
+    {
+      name: 'auth', //for identification (be sure, that unique)
+      proxy: '123.123.28.128', //app try it first
+      address: '221.221.28.128',  //app try it second, if proxy down
+      port: 22222
+    },
+  ]
+}

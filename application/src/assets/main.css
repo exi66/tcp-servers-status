@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-rgb: 33, 37, 41;
+  --dark: #212529;
+}
+
+body {
+  background-color: var(--dark);
+  color: rgba(255, 255, 255, .7);
+}
+
+.container {
+  max-width: 1280px;
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
