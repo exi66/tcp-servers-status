@@ -172,7 +172,7 @@ export default {
     },
     html5Date(date) {
       let __date = this.dateInMoscow(date);
-      return `${__date.getFullYear()}-${("0" + (__date.getMonth() + 1)).slice(-2)}-${__date.getDate()}`;
+      return `${__date.getFullYear()}-${("0" + (__date.getMonth() + 1)).slice(-2)}-${("0" + (__date.getDate() + 1)).slice(-2)}`;
     }
   }
 }
