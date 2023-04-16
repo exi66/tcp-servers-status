@@ -19,13 +19,13 @@ export default {
         datasets: [{
           label: '',
           data: [],
-          fill: {
-            target: 'origin',
-            below: 'rgba(220, 38, 38, 1)',
-            above: 'rgba(22, 163, 74, 1)'
-          },
           borderWidth: 0,
-          backgroundColor: 'rgba(22, 163, 74, 1)',
+          backgroundColor: function (context) {
+            const index = context.dataIndex;
+            const value = context.dataset.data[index];
+            if (value) return value.y < 0 ? 'rgba(220, 38, 38, 1)' : 'rgba(22, 163, 74, 1)';
+            else return 'rgba(22, 163, 74, 1)';
+          },
         }],
       },
       options: {
