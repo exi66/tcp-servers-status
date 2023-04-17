@@ -129,7 +129,7 @@ export default {
           for (let s of this.servers) {
             let find = res.data.servers.find(e => e.name === s.name) || { ping: null };
             s.ping = find.ping;
-            s.textPing = find.ping ? find.ping.toFixed(2) + 'ms' : 'ожидание';
+            s.textPing = find.ping ? find.ping > 0 ? find.ping.toFixed(2) + 'ms' : 'down' : 'ожидание';
           }
         }
         let chartData = await this.getChartData(now);
