@@ -6,7 +6,7 @@ export default {
   /**
    * Header label (application name);
    */
-  APP: 'BDO RU',
+  APPNAME: 'BDO RU',
   /**
    * Front will try to find these servers in the responses from the backend;
    */

@@ -1,24 +1,45 @@
-import Chart from 'chart.js/auto';
-import 'chartjs-adapter-moment';
+<template>
+  <div>
+    <BarChart :data="chartData" :options="options" style="position: relative; width: 100%; max-height: 256px;" />
+  </div>
+</template>
 
-/**
- * Сonfig for chart.js monts graphs is located in this file;
- */
+<script>
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  TimeScale,
+  LinearScale,
+  BarElement,
+} from 'chart.js'
+import { Bar as BarChart } from 'vue-chartjs'
+import 'chartjs-adapter-moment'
 
-Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.3)';
-Chart.defaults.color = 'rgba(255, 255, 255, 0.7)';
-Chart.defaults.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-Chart.defaults.font.family = 'Arial';
+ChartJS.defaults.borderColor = 'rgba(255, 255, 255, 0.3)'
+ChartJS.defaults.color = 'rgba(255, 255, 255, 0.7)'
+ChartJS.defaults.strokeStyle = 'rgba(255, 255, 255, 0.3)'
+ChartJS.defaults.font.family = 'Arial'
+ChartJS.register(Title, Tooltip, Legend, TimeScale, BarElement, CategoryScale, LinearScale)
 
 export default {
-  callback: function () { },
-  create: function (id) {
-    let chart = new Chart(document.getElementById(id), {
-      type: 'bar',
-      data: {
+  components: {
+    BarChart
+  },
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    chartData() {
+      return {
         datasets: [{
-          label: '',
-          data: [],
+          label: this.data.label,
+          data: this.data.data,
           borderWidth: 0,
           backgroundColor: function (context) {
             const index = context.dataIndex;
@@ -27,8 +48,15 @@ export default {
             else return 'rgba(22, 163, 74, 1)';
           },
         }],
-      },
+      }
+    }
+  },
+  data() {
+    return {
       options: {
+        onClick: (event, chartItem) => {
+          console.log(chartItem);
+        },
         onHover: (event, chartItem) => {
           if (chartItem.length > 0) {
             event.native.target.style.cursor = 'pointer';
@@ -79,23 +107,7 @@ export default {
           }
         }
       }
-    });
-    const self = this;
-    chart.canvas.onclick = function (evt) {
-      var points = chart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
-      if (points[0]) {
-        const dataset = points[0].datasetIndex;
-        const index = points[0].index;
-        const value = chart.data.datasets[dataset].data[index];
-        self.callback(value.x);
-      }
-    };
-    return chart;
-  },
-  update(id, label, data) {
-    let chart = Chart.getChart(id);
-    chart.data.datasets[0].label = label;
-    chart.data.datasets[0].data = data;
-    chart.update();
+    }
   }
 }
+</script>

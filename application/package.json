@@ -12,7 +12,8 @@
     "bootstrap-icons": "^1.10.4",
     "chart.js": "^4.2.1",
     "chartjs-adapter-moment": "^1.0.1",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-chartjs": "^5.2.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
