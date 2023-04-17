@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <BarChart :data="chartData" :options="options" style="position: relative; width: 100%; max-height: 256px;" />
-  </div>
+  <BarChart :data="chartData" :options="options" style="position: relative; width: 100%; max-height: 256px;" />
 </template>
 
 <script>
@@ -39,7 +37,7 @@ export default {
       return {
         datasets: [{
           label: this.data.label,
-          data: this.data.data,
+          data: this.data.chartData,
           borderWidth: 0,
           backgroundColor: function (context) {
             const index = context.dataIndex;
@@ -55,7 +53,9 @@ export default {
     return {
       options: {
         onClick: (event, chartItem) => {
-          console.log(chartItem);
+          if (chartItem.length > 0) {
+            this.$emit('goToDay', new Date(chartItem[0].element.$context.raw.x));
+          }
         },
         onHover: (event, chartItem) => {
           if (chartItem.length > 0) {

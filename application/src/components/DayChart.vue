@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <LineChart :data="chartData" :options="options" style="position: relative; width: 100%; max-height: 256px;" />
-  </div>
+  <LineChart :data="chartData" :options="options" style="position: relative; width: 100%; max-height: 256px;" />
 </template>
 
 <script>
