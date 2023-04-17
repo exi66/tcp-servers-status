@@ -82,5 +82,9 @@ export default {
     chart.data.datasets[0].label = label;
     chart.data.datasets[0].data = data;
     chart.update();
+  },
+  destroy(id) {
+    let chart = Chart.getChart(id);
+    chart.destroy();
   }
 }
