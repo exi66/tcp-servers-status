@@ -222,7 +222,7 @@ export default {
         <input type="date" :max="html5Date()" v-model="dayDate"
           class="border rounded border-gray-500 p-1 m-2 focus-visible:outline-none bg-dark">
         <a :href="getImage(dayTab.date)"
-          class="border rounded border-gray-500 py-1 px-2 m-2 focus-visible:outline-none hover:text-black hover:bg-white hover:border-white">
+          class="flex border rounded border-gray-500 py-1 px-2 m-2 focus-visible:outline-none hover:text-black hover:bg-white hover:border-white">
           <i class="my-auto bi bi-image"></i>
         </a>
         <button @click="monthTab.date = dayTab.date; changeTab('month');"
@@ -241,7 +241,7 @@ export default {
         <input type="month" :max="html5Month()" v-model="monthDate"
           class="border rounded border-gray-500 p-1 m-2 focus-visible:outline-none bg-dark">
         <a :href="getImage(monthTab.date, false)"
-          class="border rounded border-gray-500 py-1 px-2 m-2 focus-visible:outline-none hover:text-black hover:bg-white hover:border-white">
+          class="flex border rounded border-gray-500 py-1 px-2 m-2 focus-visible:outline-none hover:text-black hover:bg-white hover:border-white">
           <i class="my-auto bi bi-image"></i>
         </a>
       </div>
