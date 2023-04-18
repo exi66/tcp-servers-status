@@ -111,8 +111,7 @@ export default {
       this.dayTab.servers = result;
     },
     getImage(date, day = true) {
-      const now = new Date();
-      return `/images/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.png?${now.getTime()}`;
+      return `/images/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.png`;
     },
     async getChartData(date, day = true) {
       const now = new Date();
@@ -218,7 +217,7 @@ export default {
       </div>
     </section>
     <section v-if="activeTab === 'day'" class="p-4 flex flex-row flex-wrap">
-      <div class="flex flex-row flex-wrap justify-around">
+      <div class="flex flex-row flex-wrap">
         <input type="date" :max="html5Date()" v-model="dayDate"
           class="border rounded border-gray-500 p-1 m-2 focus-visible:outline-none bg-dark">
         <a :href="getImage(dayTab.date)"

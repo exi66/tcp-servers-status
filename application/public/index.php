@@ -10,7 +10,7 @@ date_default_timezone_set('Europe/Moscow');
 
 <head>
   <meta property="og:title" content="mkdir.tk">
-  <meta property="og:description" content="Сервис по отслеживанию доступности серверов Black Desert Online RU">
+  <meta property="og:description" content="Сервис по отслеживанию доступности серверов Black Desert Online RU. Подробная статистика по дням/месяцам.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image:src" content="/images/<?= date('Y/n/j') ?>.png">
@@ -24,8 +24,8 @@ date_default_timezone_set('Europe/Moscow');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="./assets/main.css?<?= rand() ?>">
-  <script defer type="module" src="./assets/main.js?<?= rand() ?>"></script>
+  <link rel="stylesheet" href="./assets/main.css">
+  <script defer type="module" src="./assets/main.js"></script>
   <title>mkdir.tk</title>
 </head>
 
