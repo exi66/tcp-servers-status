@@ -9,12 +9,12 @@ date_default_timezone_set('Europe/Moscow');
 <html lang="en">
 
 <head>
-  <meta property="og:title" content="mkdir.tk">
+  <meta property="og:title" content="BDO RU">
   <meta property="og:description" content="Сервис по отслеживанию доступности серверов Black Desert Online RU. Подробная статистика по дням/месяцам.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image:src" content="/images/<?= date('Y/n/j') ?>.png">
-  <meta property="og:image" content="/favicon.png">
+  <meta name="twitter:image:src" content="/bdo/images/<?= date('Y/n/j') ?>.png">
+  <meta property="og:image" content="/bdo/favicon.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="128">
   <meta property="og:image:height" content="128">
