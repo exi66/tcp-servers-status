@@ -111,18 +111,18 @@ export default {
       this.dayTab.servers = result;
     },
     getImage(date, day = true) {
-      return `/images/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.png`;
+      return `/bdo/images/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.png`;
     },
     async getChartData(date, day = true) {
       const now = new Date();
-      let res = await axios.get(`/charts/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.json?${now.getTime()}`);
+      let res = await axios.get(`/bdo/charts/${date.getFullYear()}/${date.getMonth() + 1}/${day ? date.getDate() : 'index'}.json?${now.getTime()}`);
       if (res.status === 200 && res.data) return res.data;
       return null;
     },
     async callAPI() {
       try {
         const now = this.dateInMoscow();
-        let res = await axios.get('/charts/current.json?' + now.getTime());
+        let res = await axios.get('/bdo/charts/current.json?' + now.getTime());
         if (res.status === 200 && res.data.time && res.data.servers) {
           this.time = new Date(res.data.time);
           for (let s of this.servers) {
