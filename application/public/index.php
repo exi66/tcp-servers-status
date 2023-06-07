@@ -18,7 +18,7 @@ date_default_timezone_set('Europe/Moscow');
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="128">
   <meta property="og:image:height" content="128">
-  <link rel="canonical" href="https://bdo.rmdir.dev/">
+  <link rel="canonical" href="https://projects.rmdir.dev/bdo/">
   
   <meta name="csrf-token" content="<?= $_SESSION['__token'] ?>">
   <meta charset="UTF-8">
