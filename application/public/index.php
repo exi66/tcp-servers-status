@@ -23,7 +23,7 @@ date_default_timezone_set('Europe/Moscow');
   <meta name="csrf-token" content="<?= $_SESSION['__token'] ?>">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/bdo/favicon.ico">
   <link rel="stylesheet" href="./assets/main.css?<?= rand() ?>">
   <script defer type="module" src="./assets/main.js?<?= rand() ?>"></script>
   <title>BDO RU</title>
