@@ -18,7 +18,7 @@ date_default_timezone_set('Europe/Moscow');
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="128">
   <meta property="og:image:height" content="128">
-  <link rel="canonical" href="https://mkdir.tk/">
+  <link rel="canonical" href="https://bdo.rmdir.dev/">
   
   <meta name="csrf-token" content="<?= $_SESSION['__token'] ?>">
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@ date_default_timezone_set('Europe/Moscow');
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="./assets/main.css">
   <script defer type="module" src="./assets/main.js"></script>
-  <title>mkdir.tk</title>
+  <title>BDO RU</title>
 </head>
 
 <body id="app" style="margin: 0;">
