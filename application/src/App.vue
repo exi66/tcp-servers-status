@@ -83,6 +83,7 @@ export default {
             return elem;
           });
           result.push({ label: server.label, chartData: localChartData, name: server.name });
+          this.monthTab.error = null;
         }
       } catch (e) {
         this.monthTab.error = e;
@@ -103,6 +104,7 @@ export default {
             return elem;
           });
           result.push({ label: server.label, chartData: localChartData, name: server.name });
+          this.dayTab.error = null;
         }
       } catch (e) {
         this.dayTab.error = e;
